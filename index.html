@@ -1255,8 +1255,8 @@ document.getElementById('eu-mailto').href = buildMailto(euEmails);
 
 function buildLegalMailto(to, subject, bodyElementId) {
   const bodyText = document.getElementById(bodyElementId).textContent;
-  // Truncate for mailto URL limits (~2000 chars for body)
-  const maxLen = 1800;
+  // Truncate for mailto URL limits (~5000 chars for body)
+  const maxLen = 5000;
   let shortBody = bodyText;
   if (bodyText.length > maxLen) {
     shortBody = bodyText.substring(0, maxLen) + '\n\n[FULL COMPLAINT TEXT EXCEEDS EMAIL LINK LIMIT — Please paste the full text from the website using the Copy button]';
