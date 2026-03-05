@@ -424,15 +424,19 @@ footer {
   </div>
 
   <!-- COUNTRY EMAILS -->
-  <div class="collapsible-section">
-    <div class="collapsible-header" onclick="toggleSection('country-emails-content')">
-      <h2>📧 Email European Officials (One Click)</h2>
-      <span class="collapsible-icon" id="country-emails-content-icon">▼</span>
-    </div>
-    <div class="collapsible-content" id="country-emails-content">
-      <div class="collapsible-content-inner">
+  <div style="margin-bottom: 1.5rem;">
+    <h2 style="text-align: center; margin-bottom: 1rem; font-size: 1.8rem;">📧 Email European Officials</h2>
+    <p style="text-align: center; color: var(--muted); margin-bottom: 1.5rem;">Choose your country below - each opens with one click</p>
+  </div>
 
   <!-- ===================== FRANCE ===================== -->
+  <div class="collapsible-section">
+    <div class="collapsible-header" onclick="toggleSection('france-content')">
+      <h2>🇫🇷 France — Assemblée Nationale</h2>
+      <span class="collapsible-icon" id="france-content-icon">▼</span>
+    </div>
+    <div class="collapsible-content" id="france-content">
+      <div class="collapsible-content-inner">
   <div class="section" id="france">
     <div class="email-card">
       <div class="email-card-header">
@@ -496,8 +500,19 @@ With urgent hope,
       </div>
     </div>
   </div>
+      </div>
+    </div>
+  </div>
+  <!-- END FRANCE -->
 
   <!-- ===================== UK ===================== -->
+  <div class="collapsible-section">
+    <div class="collapsible-header" onclick="toggleSection('uk-content')">
+      <h2>🇬🇧 United Kingdom — Parliament &amp; Government</h2>
+      <span class="collapsible-icon" id="uk-content-icon">▼</span>
+    </div>
+    <div class="collapsible-content" id="uk-content">
+      <div class="collapsible-content-inner">
   <div class="section" id="uk">
     <div class="email-card">
       <div class="email-card-header">
@@ -522,8 +537,19 @@ With urgent hope,
       </div>
     </div>
   </div>
+      </div>
+    </div>
+  </div>
+  <!-- END UK -->
 
   <!-- ===================== GERMANY ===================== -->
+  <div class="collapsible-section">
+    <div class="collapsible-header" onclick="toggleSection('germany-content')">
+      <h2>🇩🇪 Germany — Bundestag &amp; Foreign Ministry</h2>
+      <span class="collapsible-icon" id="germany-content-icon">▼</span>
+    </div>
+    <div class="collapsible-content" id="germany-content">
+      <div class="collapsible-content-inner">
   <div class="section" id="germany">
     <div class="email-card">
       <div class="email-card-header">
@@ -548,8 +574,19 @@ With urgent hope,
       </div>
     </div>
   </div>
+      </div>
+    </div>
+  </div>
+  <!-- END GERMANY -->
 
   <!-- ===================== EU PARLIAMENT ===================== -->
+  <div class="collapsible-section">
+    <div class="collapsible-header" onclick="toggleSection('eu-content')">
+      <h2>🇪🇺 European Parliament</h2>
+      <span class="collapsible-icon" id="eu-content-icon">▼</span>
+    </div>
+    <div class="collapsible-content" id="eu-content">
+      <div class="collapsible-content-inner">
   <div class="section" id="eu">
     <div class="email-card">
       <div class="email-card-header">
@@ -578,8 +615,19 @@ With urgent hope,
       </div>
     </div>
   </div>
+      </div>
+    </div>
+  </div>
+  <!-- END EU -->
 
   <!-- SEND ALL -->
+  <div class="collapsible-section">
+    <div class="collapsible-header" onclick="toggleSection('send-all-content')">
+      <h2>⚡ Send to All Countries at Once</h2>
+      <span class="collapsible-icon" id="send-all-content-icon">▼</span>
+    </div>
+    <div class="collapsible-content" id="send-all-content">
+      <div class="collapsible-content-inner">
   <div class="section" style="text-align:center;">
     <h2 style="border:none; text-align:center;">⚡ Send to All Countries at Once</h2>
     <p style="margin-bottom:1rem; color:var(--muted);">One click opens your email app with all recipients combined.</p>
@@ -591,11 +639,10 @@ With urgent hope,
     <br>
     <button class="btn btn-secondary" onclick="copyAllRecipients()">📋 Copy All Recipients</button>
   </div>
-
       </div>
     </div>
   </div>
-  <!-- END COUNTRY EMAILS -->
+  <!-- END SEND ALL -->
 
 </div>
 
