@@ -289,6 +289,62 @@ header .date {
   border: 1px solid var(--border);
 }
 
+.collapsible-section {
+  margin-bottom: 1.5rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--card-bg);
+}
+
+.collapsible-header {
+  background: var(--dark);
+  color: #fff;
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: background 0.2s;
+  user-select: none;
+}
+
+.collapsible-header:hover {
+  background: #2a2a2a;
+}
+
+.collapsible-header h2 {
+  margin: 0;
+  padding: 0;
+  border: none;
+  font-size: 1.3rem;
+  color: #fff;
+}
+
+.collapsible-icon {
+  font-size: 1.2rem;
+  transition: transform 0.3s;
+}
+
+.collapsible-icon.open {
+  transform: rotate(180deg);
+}
+
+.collapsible-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+}
+
+.collapsible-content.open {
+  max-height: 10000px;
+  transition: max-height 0.5s ease-in;
+}
+
+.collapsible-content-inner {
+  padding: 1.5rem;
+}
+
 footer {
   text-align: center;
   padding: 1.5rem;
@@ -339,26 +395,42 @@ footer {
   </div>
 
   <!-- HOW IT WORKS -->
-  <div class="section">
-    <h2>How It Works</h2>
-    <div class="steps">
-      <div class="step">
-        <div class="step-num">1</div>
-        <h3>Choose a Country</h3>
-        <p>Pick France, UK, Germany, or EU Parliament below</p>
-      </div>
-      <div class="step">
-        <div class="step-num">2</div>
-        <h3>Click "Open Email"</h3>
-        <p>Your email app opens with everything pre-filled</p>
-      </div>
-      <div class="step">
-        <div class="step-num">3</div>
-        <h3>Hit Send</h3>
-        <p>Review and send. That's it. You've helped.</p>
+  <div class="collapsible-section">
+    <div class="collapsible-header" onclick="toggleSection('how-it-works-content')">
+      <h2>How It Works</h2>
+      <span class="collapsible-icon open" id="how-it-works-content-icon">▼</span>
+    </div>
+    <div class="collapsible-content open" id="how-it-works-content">
+      <div class="collapsible-content-inner">
+        <div class="steps">
+          <div class="step">
+            <div class="step-num">1</div>
+            <h3>Choose a Country</h3>
+            <p>Pick France, UK, Germany, or EU Parliament below</p>
+          </div>
+          <div class="step">
+            <div class="step-num">2</div>
+            <h3>Click "Open Email"</h3>
+            <p>Your email app opens with everything pre-filled</p>
+          </div>
+          <div class="step">
+            <div class="step-num">3</div>
+            <h3>Hit Send</h3>
+            <p>Review and send. That's it. You've helped.</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
+
+  <!-- COUNTRY EMAILS -->
+  <div class="collapsible-section">
+    <div class="collapsible-header" onclick="toggleSection('country-emails-content')">
+      <h2>📧 Email European Officials (One Click)</h2>
+      <span class="collapsible-icon" id="country-emails-content-icon">▼</span>
+    </div>
+    <div class="collapsible-content" id="country-emails-content">
+      <div class="collapsible-content-inner">
 
   <!-- ===================== FRANCE ===================== -->
   <div class="section" id="france">
@@ -520,9 +592,22 @@ With urgent hope,
     <button class="btn btn-secondary" onclick="copyAllRecipients()">📋 Copy All Recipients</button>
   </div>
 
+      </div>
+    </div>
+  </div>
+  <!-- END COUNTRY EMAILS -->
+
 </div>
 
 <!-- ===================== LEGAL ACTION ===================== -->
+  <div class="collapsible-section">
+    <div class="collapsible-header" onclick="toggleSection('legal-action-content')">
+      <h2>⚖️ Legal Action: Sue Regime Officials in European Courts</h2>
+      <span class="collapsible-icon" id="legal-action-content-icon">▼</span>
+    </div>
+    <div class="collapsible-content" id="legal-action-content">
+      <div class="collapsible-content-inner">
+
   <div class="section" id="legal">
     <h2>⚖️ Legal Action: Sue Regime Officials in European Courts</h2>
     <p style="margin-bottom:1rem;">Iranian regime officials <strong>may be prosecuted in certain European courts</strong> under <strong>universal jurisdiction principles, subject to specific legal prerequisites:</strong></p>
@@ -979,9 +1064,20 @@ Every day these assets remain unfrozen is a day Canada shields the Islamic Repub
       </div>
     </div>
 
+      </div>
+    </div>
+  </div>
+  <!-- END LEGAL ACTION -->
+
     <!-- NGO EMAILS -->
-    <h2 style="margin-top:2rem;">🤝 Email Organizations That Can File on Your Behalf</h2>
-    <p style="margin-bottom:1rem;">These organizations specialize in universal jurisdiction cases. One click opens a pre-written email asking them to act:</p>
+    <div class="collapsible-section">
+      <div class="collapsible-header" onclick="toggleSection('ngo-emails-content')">
+        <h2>🤝 Email Organizations That Can File on Your Behalf</h2>
+        <span class="collapsible-icon" id="ngo-emails-content-icon">▼</span>
+      </div>
+      <div class="collapsible-content" id="ngo-emails-content">
+        <div class="collapsible-content-inner">
+          <p style="margin-bottom:1rem;">These organizations specialize in universal jurisdiction cases. One click opens a pre-written email asking them to act:</p>
 
     <div class="email-card" style="margin-bottom:1rem;">
       <div class="email-card-body" style="padding:1rem 1.25rem;">
@@ -1000,6 +1096,17 @@ Every day these assets remain unfrozen is a day Canada shields the Islamic Repub
         <div class="btn-row" style="margin-top:0.75rem;">
           <a id="trial-mailto" class="btn btn-primary btn-small" href="#">✉ Email TRIAL International</a>
           <span style="font-size:0.8rem; color:var(--muted);">info@trialinternational.org</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="email-card" style="margin-bottom:1rem;">
+      <div class="email-card-body" style="padding:1rem 1.25rem;">
+        <p><strong>Center for Human Rights in Iran (CHRI)</strong> (New York) — US-based Iranian human rights organization</p>
+        <p>Documents rights violations and advocates for accountability.</p>
+        <div class="btn-row" style="margin-top:0.75rem;">
+          <a id="chri-mailto" class="btn btn-primary btn-small" href="#">✉ Email CHRI</a>
+          <span style="font-size:0.8rem; color:var(--muted);">info@iranhumanrights.org</span>
         </div>
       </div>
     </div>
@@ -1031,6 +1138,11 @@ Every day these assets remain unfrozen is a day Canada shields the Islamic Repub
       <p>6. <strong>For Khavari in Canada</strong> — contact the RCMP and your Canadian MP demanding investigation and asset freeze</p>
     </div>
   </div>
+
+      </div>
+    </div>
+  </div>
+  <!-- END NGO EMAILS -->
 
 <!-- SHARE -->
 <div class="share-section">
@@ -1162,6 +1274,33 @@ I am willing to [provide testimony/support your work/share evidence].
 
 document.getElementById('trial-mailto').href = `mailto:info@trialinternational.org?subject=${encodeURIComponent('Request for Universal Jurisdiction Action — Iran 2026 Massacres')}&body=${encodeURIComponent(trialBody)}`;
 
+// CHRI
+const chriBody = `Dear Center for Human Rights in Iran Team,
+
+I am writing regarding the ongoing massacres in Iran since January 8, 2026. Over 6,126 deaths have been independently confirmed (HRANA), with estimates reaching 36,500 (Iran International, based on IRGC internal documents). The European Parliament has recognized these as potential crimes against humanity (Resolution Jan 22, 2026, 562-9).
+
+As a US-based organization documenting human rights violations in Iran, I urge CHRI to:
+
+1. Continue documenting the January 2026 massacres and collecting evidence for future accountability mechanisms
+
+2. Advocate with US government officials and international bodies for:
+   - Targeted sanctions against Iranian officials responsible for the massacres
+   - Support for universal jurisdiction cases in European courts
+   - Investigation and freezing of regime assets in the US and allied countries
+
+3. Coordinate with European NGOs (ECCHR, TRIAL International) that are filing universal jurisdiction complaints
+
+4. Support Iranian diaspora communities in their advocacy efforts
+
+Named suspects include: Ali Khamenei (Supreme Leader), Ali Larijani (SNSC Secretary), Eskandar Momeni Kalagari (Interior Minister), Majid Khademi (IRGC Intelligence), Gholamhossein Mohseni-Ejei (Head of Judiciary), and IRGC provincial commanders (sanctioned by US Treasury OFAC, Jan 2026).
+
+I am willing to [provide testimony/support your work/share evidence].
+
+[Your Name]
+[Your Location]`;
+
+document.getElementById('chri-mailto').href = `mailto:info@iranhumanrights.org?subject=${encodeURIComponent('Request for Advocacy and Documentation — Iran 2026 Massacres')}&body=${encodeURIComponent(chriBody)}`;
+
 // Canada — RCMP + MP
 const canadaEmails = "info-info@rcmp-grc.gc.ca,ps.ministermin-ministremin.sp@ps-sp.gc.ca,media@ps-sp.gc.ca,pb-dgp@justice.gc.ca,FGGA@parl.gc.ca";
 document.getElementById('canada-legal-mailto').href = buildLegalMailto(
@@ -1209,6 +1348,30 @@ function copyPageLink() {
   // In practice, this would copy the actual hosted URL
   navigator.clipboard.writeText(window.location.href).then(() => showToast('Link copied!')).catch(() => showToast('Copy the URL from your browser address bar'));
 }
+
+// Collapsible sections functionality
+function toggleSection(sectionId) {
+  const content = document.getElementById(sectionId);
+  const icon = document.getElementById(sectionId + '-icon');
+  
+  if (content.classList.contains('open')) {
+    content.classList.remove('open');
+    icon.classList.remove('open');
+  } else {
+    content.classList.add('open');
+    icon.classList.add('open');
+  }
+}
+
+// Open first section by default on page load
+document.addEventListener('DOMContentLoaded', function() {
+  const firstSection = document.querySelector('.collapsible-content');
+  const firstIcon = document.querySelector('.collapsible-icon');
+  if (firstSection && firstIcon) {
+    firstSection.classList.add('open');
+    firstIcon.classList.add('open');
+  }
+});
 </script>
 </body>
 </html>
