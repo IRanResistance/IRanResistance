@@ -625,30 +625,6 @@ With urgent hope,
   </div>
   <!-- END EU -->
 
-  <!-- SEND ALL -->
-  <div class="collapsible-section">
-    <div class="collapsible-header" onclick="toggleSection('send-all-content')">
-      <h2>⚡ Send to All Countries at Once</h2>
-      <span class="collapsible-icon" id="send-all-content-icon">▼</span>
-    </div>
-    <div class="collapsible-content" id="send-all-content">
-      <div class="collapsible-content-inner">
-  <div class="section" style="text-align:center;">
-    <h2 style="border:none; text-align:center;">⚡ Send to All Countries at Once</h2>
-    <p style="margin-bottom:1rem; color:var(--muted);">One click opens your email app with all recipients combined.</p>
-    <div class="btn-row" style="justify-content:center;">
-      <a id="all-mailto" class="btn btn-red" href="#" style="font-size:1.1rem; padding:1rem 2rem;">
-        ✉ Send to ALL European Officials
-      </a>
-    </div>
-    <br>
-    <button class="btn btn-secondary" onclick="copyAllRecipients()">📋 Copy All Recipients</button>
-  </div>
-      </div>
-    </div>
-  </div>
-  <!-- END SEND ALL -->
-
 </div>
 
 <!-- ===================== LEGAL ACTION ===================== -->
@@ -1275,9 +1251,6 @@ document.getElementById('uk-mailto').href = buildMailto(ukEmails);
 document.getElementById('germany-mailto').href = buildMailto(germanyEmails);
 document.getElementById('eu-mailto').href = buildMailto(euEmails);
 
-const allEmails = [franceEmails, ukEmails, germanyEmails, euEmails].join(',');
-document.getElementById('all-mailto').href = buildMailto(allEmails);
-
 // ===== LEGAL COMPLAINT MAILTO LINKS =====
 
 function buildLegalMailto(to, subject, bodyElementId) {
@@ -1402,19 +1375,6 @@ function copyText(elementId) {
     document.execCommand('copy');
     document.body.removeChild(ta);
     showToast('Copied!');
-  });
-}
-
-function copyAllRecipients() {
-  const all = allEmails.replace(/,/g, ', ');
-  navigator.clipboard.writeText(all).then(() => showToast('All recipients copied!')).catch(() => {
-    const ta = document.createElement('textarea');
-    ta.value = all;
-    document.body.appendChild(ta);
-    ta.select();
-    document.execCommand('copy');
-    document.body.removeChild(ta);
-    showToast('All recipients copied!');
   });
 }
 
