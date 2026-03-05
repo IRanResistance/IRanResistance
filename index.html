@@ -918,6 +918,9 @@ While Iran is not a State Party to the Rome Statute, I urge the Prosecutor to:
         <span style="font-size:0.8rem; color:#ccc;">Demand asset freeze &amp; investigation</span>
       </div>
       <div class="email-card-body">
+        <div class="field-label">CC Recipients (RCMP, Ministers, MPs)</div>
+        <div class="field-value" id="canada-recipients">info-info@rcmp-grc.gc.ca, ps.ministermin-ministremin.sp@ps-sp.gc.ca, media@ps-sp.gc.ca, pb-dgp@justice.gc.ca, FGGA@parl.gc.ca</div>
+        
         <div class="field-label">Pre-written Email to Canadian Officials</div>
         <div class="email-body-display" id="canada-legal-body">To: Royal Canadian Mounted Police / Members of Parliament
 
@@ -970,8 +973,9 @@ Every day these assets remain unfrozen is a day Canada shields the Islamic Repub
         <div class="btn-row">
           <a id="canada-legal-mailto" class="btn btn-primary" style="background:#dd0000;" href="#">✉ Email Canadian Officials</a>
           <button class="btn btn-secondary" onclick="copyText('canada-legal-body')">📋 Copy Text</button>
+          <button class="btn btn-secondary btn-small" onclick="copyText('canada-recipients')">📋 Copy Recipients</button>
         </div>
-        <p class="note">Send to your Canadian MP and to RCMP. Find your MP at <a href="https://www.ourcommons.ca/members/en" target="_blank">ourcommons.ca/members</a></p>
+        <p class="note">Sends to RCMP, Public Safety Minister, Justice Department, and Foreign Affairs. Also find your local MP at <a href="https://www.ourcommons.ca/members/en" target="_blank">ourcommons.ca/members</a> and add them to CC.</p>
       </div>
     </div>
 
@@ -1159,8 +1163,9 @@ I am willing to [provide testimony/support your work/share evidence].
 document.getElementById('trial-mailto').href = `mailto:info@trialinternational.org?subject=${encodeURIComponent('Request for Universal Jurisdiction Action — Iran 2026 Massacres')}&body=${encodeURIComponent(trialBody)}`;
 
 // Canada — RCMP + MP
+const canadaEmails = "info-info@rcmp-grc.gc.ca,ps.ministermin-ministremin.sp@ps-sp.gc.ca,media@ps-sp.gc.ca,pb-dgp@justice.gc.ca,FGGA@parl.gc.ca";
 document.getElementById('canada-legal-mailto').href = buildLegalMailto(
-  'info-info@rcmp-grc.gc.ca',
+  canadaEmails,
   'Demand for Investigation and Asset Freeze — Mahmoud Reza Khavari and Islamic Republic Regime Assets in Canada',
   'canada-legal-body'
 );
